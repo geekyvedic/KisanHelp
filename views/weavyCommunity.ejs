@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>WeavyCommunity</title>
+<link rel="stylesheet" href="CSS/weavyCommunity.css">
+  </head>
+  <body style="overflow-x:hidden">
+    <div class="topnav">
+      <a href="#" style="margin-right: 250px; margin-left: 70px">KISANHELP</a>
+        <a href="/">HOME</a>
+        <a href="/schemes">SCHEMES</a>
+        <a href="/location" class="location">LOCATION</a>
+        <a href="/crop">CROP</a>
+        <a href="/news">WORLD-WIDE FARMING NEWS</a>
+        <a href="/weavyCommunity">COMMUNITY</a>
+        <a href="/signin-signup">SIGNUP/LOGIN</a>
+    </div>
+    <h1>Our Farmer's Community</h1>
+    <h1 class="h1" style="display:none"><%=token%></h1>
+    <div id="weavy-feeds" style="height:800px">
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    =
+    ></script> -->
+    <script src="https://localhost:44323/javascript/weavy.js"></script>
+
+    <script>
+
+              var jwt = document.querySelector(".h1").textContent;
+              var weavy = new Weavy({jwt: jwt});
+              var space = weavy.space({ key: "community" });
+              space.app({
+                  key: "posts-demo",
+                  type: "posts",
+                  container: "#weavy-feeds"
+              });
+              const locationlink = document.querySelector(".location");
+              const loc = navigator.geolocation.getCurrentPosition((position)=>{
+                console.log(position.coords);
+                let lat = position.coords.latitude;
+                let long = position.coords.longitude;
+                locationlink.href = "/location/"+lat+"/"+long;
+              },
+              (err)=>{
+                console.log(err);
+              });
+
+    </script>
+
+  </body>
+
+</html>

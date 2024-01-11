@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kisanHelp</title>
+    <link rel="stylesheet" href="CSS/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Besley&family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+        <h1>KisanHelp</h1>
+        <div class="navbar" id="navlink">
+            <i class="fa fa-times" onclick="hidemenu()" ></i>
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/schemes">SCHEMES</a></li>
+                <li><a href="/location" class="location" >LOCATION</a></li>
+                <li><a href="/crop">CROP</a></li>
+                <li><a href="/news">WORLD-WIDE FARMING NEWS</a></li>
+                <li><a href="/weavyCommunity">COMMUNITY</a></li>
+                <li><a href="/signin-signup">SIGNUP/LOGIN</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showmenu()" id="menu"></i>
+        </nav>
+        <div class="text">
+            <h1>Work Less-Gain More</h1>
+
+        </div>
+    </section>
+
+    <section class="features">
+        <h1>!----Our Features----!</h1>
+        <p id="fe">Visit below to know more about our features</p>
+        <div class="row" >
+            <div class="fe-col" style="padding-bottom:40px;">
+                <h3>KisanToMiddlemen</h3>
+                <p>Farmers generally face issues with selling of their crops after
+                    harvesting.They don't know about whom should they sell to increase their profits,
+                    KTM is a one-on-one interaction between farmer and middlemen in their
+                    respective location.
+                </p>
+            </div>
+            <div class="fe-col" style="padding-bottom:40px;">
+                <h3>Crop Diagnoise</h3>
+                <p>This feature enable farmers to detect crop diseases at early stages of
+                    the farming cycle,some diseases if not detected earlier can damage the entire crop.Farmers
+can upload the images of their crop,our ML model detects the diseases is there or not and also if it is present then what kind od disease is present.                </p>
+            </div>
+            <div class="fe-col" style="padding-bottom:40px;">
+                <h3>Schemes</h3>
+                <p>It contains schemes for farmers.Many of the
+                    farmers lack knowledge about the schemes and unable to get the benefits from them.
+                    This will help them increase their knowledge about the schemes of both central and state.
+
+                </p>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="fe-col">
+                <h3>Modern farming</h3>
+                <p>Still many farmers are cultivating in their ancient methods,due to which they are unable to
+                    maximize their profits .This feature has videos of modern farming methods using tractor and many machinaries to
+                reduce crop loss.methods like sprinkling system,drip irrigation can use based on water availability</p>
+            </div>
+            <div class="fe-col">
+                <h3>Community</h3>
+                <p>It is farmers community in which all farmers can join.
+                    farmers can post questions related to their crops as well as
+                    can answer questions of other farmers.it will help to increase their knowledge.
+
+                </p>
+            </div>
+            <div class="fe-col">
+                <h3>Location</h3>
+                <p>It has a location based feature in which it asked to give access to detect their location,
+                    after which farmer can avail services like weather,soil type ,Air Quality Index etc.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="review">
+        <h1>!----What our farmers says----!</h1>
+        <p>reviews of some of our farmers</p>
+        <div class="row">
+            <div class="review-col">
+                <img src="../images/user1.jpg">
+                <div>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, officia eaque vel dicta
+                 sapiente nobis aliquid, nemo amet beatae vero ratione! Non sapiente cum, mollitia maxime
+                  perferendis voluptatum nobis eveniet.
+                  <h3>SS Rajamouli</h3>
+                  <i class="fa fa-star" ></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  </div>
+            </div>
+
+            <div class="review-col">
+                <img src="../images/user2.jpg">
+                <div>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, officia eaque vel dicta
+                 sapiente nobis aliquid, nemo amet beatae vero ratione! Non sapiente cum, mollitia maxime
+                  perferendis voluptatum nobis eveniet.
+                  <h3>James Cameroon</h3>
+                  <i class="fa fa-star" ></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half-o"></i>
+                  </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <h1>Follow us here</h1>
+        <div class="icons">
+            <i id="f" class="fa fa-facebook-official" ></i>
+            <i id="ins" class="fa fa-instagram" ></i>
+            <i id="te" class="fa fa-telegram"></i>
+            <i id="tw" class="fa fa-twitter" ></i>
+            <i id="li" class="fa fa-linkedin-square"></i>
+        </div>
+    </section>
+
+
+    <div style="padding-bottom: 100px;"></div>
+
+
+    <script>
+    const locationlink = document.querySelector(".location");
+    const loc = navigator.geolocation.getCurrentPosition((position)=>{
+      console.log(position.coords);
+      let lat = position.coords.latitude;
+      let long = position.coords.longitude;
+      locationlink.href = "/location/"+lat+"/"+long;
+    },
+    (err)=>{
+      console.log(err);
+    });
+    let x= document.getElementById("navlink");
+   let y= document.getElementById("menu");
+
+   function hidemenu(){
+    x.style.right="-200px";
+    //x.style.transition="1s";
+}
+
+   function showmenu(){
+    x.style.right="0px";
+    //x.style.transition="1s";
+}
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="CSS/news.css">
+  </head>
+  <body>
+    <div class="topnav">
+      <a href="#" style="margin-right: 250px; margin-left: 70px">KISANHELP</a>
+      <a href="/">HOME</a>
+      <a href="/schemes">SCHEMES</a>
+      <a href="/location" class="location">LOCATION</a>
+      <a href="/crop">CROP</a>
+      <a href="/news">WORLD-WIDE FARMING NEWS</a>
+      <a href="/weavyCommunity">COMMUNITY</a>
+      <a href="/signin-signup">SIGNUP/LOGIN</a>
+    </div>
+    <section>
+    <% news.articles.forEach(function(article){%>
+        <div class="news">
+          <img src=<%=article.urlToImage%> alt="Image">
+          <div class="content">
+            <h1><%=article.title%></h1>
+            <hr>
+            <p> Source: <%=article.source.name%> &nbsp;&nbsp;&nbsp;&nbsp;Author: <%=article.author%></p>
+            <h3><%=article.description%></h3>
+            <p><%=article.content.substr(0,article.content.indexOf("["))%> <a href=<%=article.url%>>Read More</a></p>
+          </div>
+        </div>
+
+    <%  }); %>
+
+    </section>
+    <script>
+    const locationlink = document.querySelector(".location");
+    const loc = navigator.geolocation.getCurrentPosition((position)=>{
+      console.log(position.coords);
+      let lat = position.coords.latitude;
+      let long = position.coords.longitude;
+      locationlink.href = "/location/"+lat+"/"+long;
+    },
+    (err)=>{
+      console.log(err);
+    });
+    </script>
+  </body>
+</html>

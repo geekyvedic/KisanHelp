@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="CSS/location.css">
+</head>
+
+<body>
+<div class="topnav">
+  <a href="#" style="margin-right: 250px; margin-left: 70px">KISANHELP</a>
+  <a href="/">HOME</a>
+  <a href="/schemes">SCHEMES</a>
+  <a href="/location" class="location">LOCATION</a>
+  <a href="/crop">CROP</a>
+  <a href="/news">WORLD-WIDE FARMING NEWS</a>
+  <a href="/weavyCommunity">COMMUNITY</a>
+  <a href="/signin-signup">SIGNUP/LOGIN</a>
+</div>
+  <section>
+    <div class="intro">
+      <div class="">
+        <h2>Hi</h2>
+        <p>Your location has successfully recorded to us. Your location in coordinates is latitude <%=lat%> longitude <%=long%> .
+          You can get a lot of information here including soil types,moisture content,weather etc.</p>
+        <hr>
+        <p>Just surf around the corners and get lot of useful information. </p>
+      </div>
+    </div>
+    <div class="infoinfo">
+      <div class="info weather">
+        <img src="http://www.noaa.gov/sites/default/files/styles/landscape_width_1275/public/legacy/image/2019/Jun/PHOTO-dark%20and%20stormy%20cloudscape-istock-1125x534-Landscape.jpg?itok=xyVD1jOK" alt="">
+        <h3>Weather info</h3>
+        <hr>
+        <p>The temperature at your current location is <%=weather.main.temp%> degree celsius and the climate description is <%=weather.weather[0].description%> </p>
+        <img src=<%=weathericonurl%> alt="icon">
+      </div>
+      <div class="info soil">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbH8Z6yA0TYaSNjTnXLPaVChNAlPQ2x9vKIg&usqp=CAU" alt="">
+        <h3>Your Soil</h3>
+        <hr>
+        <p>Your soil's current temperature is <%=soil.data[0].soil_temperature%> degree celsius and its moisture content is <%=soil.data[0].soil_moisture%> %.Take good care of your soil and water it regularly.</p>
+      </div>
+      <div class="info air">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2Jwmzuqfq6GhgBPSfWvFrX3hU01gKSdL8tw&usqp=CAU" alt="">
+        <h3>Air info around you</h3>
+        <hr>
+        <p>You are currently residing in <%= air.stations[0].division %> of <%= air.stations[0].state%>.The current info and composition of air around you is AQI is around <%= air.stations[0].AQI%> and is <%=air.stations[0].aqiInfo.category%> , concentration of CO gas is <%= air.stations[0].CO%>, NO2 gas is <%= air.stations[0].NO2%>,  ozone gas is <%= air.stations[0].OZONE%>. The amount of PM2 particles around is <%= air.stations[0].PM25%>   </p>
+      </div>
+
+    </div>
+  </section>
+  <script>
+//   window.setTimeout(function () {
+// window.location.reload();
+// }, 1000);
+// window.setTimeout(function () {
+// window.location.reload();
+// }, 1000);
+// window.setTimeout(function () {
+// window.location.reload();
+// }, 1000);
+  </script>
+
+
+</body>
+
+</html>
